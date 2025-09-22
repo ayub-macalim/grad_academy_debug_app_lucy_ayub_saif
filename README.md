@@ -1,6 +1,6 @@
 # Grad Academy Debugging App
 
-This is the base Graduate Academy debugging app (no errors - at least, not intentional). The following is a setup guide for new starters.
+This is the base Graduate Academy debugging app (no errors - at least, not intentional). The following is a setup guide for new starters...
 
 ## Contents
 - Setup 💻
