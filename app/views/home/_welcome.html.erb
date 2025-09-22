@@ -4,6 +4,9 @@
   <br/>
   < class="lead"><%= t('welcome.instructions.subtitle') %></>
 
+  <h2 class="text-danger"><%= t('welcome.instructions.title', username: 'current_user.username').html_safe %>
+  </h2>
+
   <br/>
 
   <div class="text-center">
@@ -17,7 +20,6 @@
     <span class="mb-2"><%= t('welcome.instructions.list.start_quiz') %></span>
   </ul>
 
-    <p class="text-danger"><%= t('welcome.instructions.title', username: 'current_user.username').html_safe %>
-  </p>
+    
 </div>
 
