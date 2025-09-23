@@ -2,22 +2,15 @@
 
   <br/>
   <br/>
-  < class="lead"><%= t('welcome.instructions.subtitle') %></>
-
-  <h2 class="text-danger"><%= t('welcome.instructions.title', username: 'current_user.username').html_safe %>
-  </h2>
-
+  <h1 class="text-danger"><%= t('welcome.instructions.title', username: current_user.username ).html_safe %>
+  </h1>
+  <hr class="border-top border-3 border-danger my-2">
   <br/>
-
-  <div class="text-center">
-    <%= link_to t('welcome'), step_path(id: 17), class: "btn btn-md mx-auto px-5" %>
-  </div>
-
+  <p class="lead"><%= t('welcome.instructions.subtitle') %></p>
   <ul class="list">
-    <ol class="mb-2"><%= t('welcome.instructions.list.answer_questions') %></ol>
-    <hr />
-    <a class="mb-2"><%= t('welcome.instructions.list.submit_answers') %></a>
-    <span class="mb-2"><%= t('welcome.instructions.list.start_quiz') %></span>
+    <li class="mb-2"><%= t('welcome.instructions.list.answer_questions') %></li>
+    <li class="mb-2"><%= t('welcome.instructions.list.submit_answers') %></li>
+    <li class="mb-2"><%= t('welcome.instructions.list.start_quiz') %></li>
   </ul>
 
     
