@@ -5,7 +5,7 @@
 
   <div class="border border-danger w-100 rounded mt-4 mb-4 px-1">
     <h2 class="text-danger text-center mx-3 mt-3">
-      <%= t('quiz_results.your_score') %><span class="text-dark"><%= t('quiz_results.score', score: @score_percentage) %></span>
+      <%= t('quiz_results.your_score') %><span class="text-dark"><%= t('quiz_results.score', score: @score_percentage.round(1)) %></span>
     </h2>
     <h3 class="text-dark text-center mb-3">
       <%= t('quiz_results.questions_correctly_answered', correct: @correct_answers, total: @total_questions) %>
@@ -25,8 +25,8 @@
         </thead>
         <tbody class="table-group-divider border-danger">
             <% @quiz_results.answer.each_with_index do |answers, index| %>
-              <% answers[1].each_with_index do |_answer, question_index| %>
-                <%= generate_table_row(index, question_index, answers) %>
+              <% answers[1].each_with_index do |answer, question| %>
+                <%= generate_table_row(index, question, answers) %>
               <% end %>
             <% end %>
         </tbody>

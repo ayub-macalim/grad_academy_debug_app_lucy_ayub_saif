@@ -1,4 +1,4 @@
-<div id="welcome" class="container w-75 mt-5 mb-4 pt-5">
+<div id="welcome" class="container d-flex flex-column w-75 mt-5 mb-4 pt-5">
 
   <br/>
   <br/>
@@ -12,6 +12,14 @@
     <li class="mb-2"><%= t('welcome.instructions.list.submit_answers') %></li>
     <li class="mb-2"><%= t('welcome.instructions.list.start_quiz') %></li>
   </ul>
+  <div class="d-flex flex-row justify-content-center">
+    <%= link_to step_path(id: 1), class: " pt-2 text-center w-25 submit-button" do %>
+        <%= t('welcome.start_quiz') %>
+    <% end %>
+  </div>
+  
+
+  
 
     
 </div>

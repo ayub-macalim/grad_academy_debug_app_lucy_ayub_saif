@@ -44,16 +44,6 @@ class UsersController < ApplicationController
       render :edit, status: :unprocessable_content, locale: I18n.locale
     end
   end
-
-  private
-
-  # Strong parameters for user creation.
-  def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
-  end
-
-  # Strong parameters for user update.
-  def user_update_params
-    params.require(:user).permit(:username, :language)
-  end
 end
+
+ 
