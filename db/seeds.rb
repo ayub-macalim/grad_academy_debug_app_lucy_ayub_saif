@@ -6,7 +6,6 @@ users_data = [
   { email: 'test@test.com', username: 'test', password: 'test' },
   { email: 'alice@example.com', username: 'alice', password: 'password' },
   { email: 'bob@example.com', username: 'bob', password: 'password' },
-  { email: 'charlie@example.com', username: 'charlie', password: 'password' }
 ]
 
 # Create users if they don't already exist
@@ -39,11 +38,6 @@ answers_data = {
     question_page_1: ['Femur', 'Albert Einstein', 'Intel', 'Mount Everest', 'Nitrogen'],
     question_page_2: ['Photosynthesis', 'Ichthyology', 'Marie Curie', 'Python', 'J.D. Salinger'],
     question_page_3: %w[giraffe pacific lima au ruby]
-  },
-  'charlie' => {
-    question_page_1: ['Tibia', 'Albert Einstein', 'Intel', 'Mount Everest', 'Nitrogen'],
-    question_page_2: ['Photosynthesis', 'Entomology', 'Rosalind Franklin', 'Python', 'J.D. Salinger'],
-    question_page_3: %w[shark pacific lima pb ruby]
   }
 }
 
@@ -66,7 +60,7 @@ answers_data.each do |username, answers|
       # Use the created answer object for scoring and other operations
       quiz_results = answer
 
-      score_percentage = score_percentage(quiz_results) || 0
+      score_percentage = score_percentage(quiz_results) 
 
       answer.update(score: score_percentage)
 

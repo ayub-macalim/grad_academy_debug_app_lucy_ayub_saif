@@ -75,6 +75,10 @@ class QuizForm
     answer ? current_step - 1 : current_step
   end
 
+  def next_step
+    answer ? current_step + 1 : current_step
+  end
+
   # Returns the range of current quiz pages.
   def current_page_range
     I18n.t('quiz_form.current_page_range', start_page: 1)

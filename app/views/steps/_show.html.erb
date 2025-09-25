@@ -1,6 +1,6 @@
-<% provide(:title, "Page #{@quiz_form.current_step} of #{QuizConstantsHelper::NUMBER_OF_PAGES}") %>
+
 <div class="container w-75 mt-5 mb-4 pt-5">
-  <h2><%= @quiz_form.current_page_range %></h2>
+  <h2><%= "Page #{@quiz_form.current_step} of #{@quiz_form.total_steps}"  %></h2>
   <hr class="border border-danger w-100 border-2 my-2">
   <% question_index = 0 %>
 
@@ -15,13 +15,13 @@
 
     <div class="row mt-4">
       <div class="col-12 col-md-6 d-flex justify-content-md-start justify-content-center mb-3 mb-md-0 <%= 'invisible' if @quiz_form.current_step == 1 %>">
-        <%= link_to t('forms.back_button'), step_path(@quiz_form.current_step, locale: I18n.locale), class: "btn btn-outline-danger px-5" %>
+        <%= link_to t('forms.back_button'), step_path(@quiz_form.previous_step, locale: I18n.locale), class: "btn btn-outline-danger px-5" %>
       </div>
 
       <div class="col-12 col-md-6 d-flex justify-content-md-end justify-content-center">
         <% if @quiz_form.current_step < @quiz_form.total_steps %>
-          <%= link_to step_path(id: 2), class: "btn btn-danger px-5" do %>
-             <%= t('forms.next') %>
+          <%= link_to step_path(@quiz_form.next_step, locale: I18n.locale), class: "btn btn-danger px-5" do %>
+            <%= t('forms.next') %>
           <% end %>
         <% else %>
           <%= f.submit t('forms.submit'), class: "btn btn-danger px-5" %>
