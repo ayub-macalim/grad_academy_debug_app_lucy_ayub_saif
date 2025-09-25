@@ -11,4 +11,29 @@
   #mobile-border {
     border-right: none !important;
   }
+} 
+
+.submit-button {
+    color: white;
+    background-color: #e33d3d;
+    border-radius: 8px;
+    border-width: 0px;
+    border-color: white;
+    width: 150px;
+    height: 40px;
+    margin-top: 20px;
 }
+
+.sign-up-stuff {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.signup-input {
+    max-width: 1000px;
+    width: 30%;
+    justify-self: center;
+    margin: 15px;
+}
+

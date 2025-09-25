@@ -45,9 +45,8 @@ module QuizResultsHelper
   # - Float representing the score percentage rounded to two decimal places.
   #
   def score_percentage(quiz_results)
-    return 0 if TOTAL_QUESTIONS.zero?
+    return ((total_correct_answers(quiz_results).to_f / 15) * 100).round(2)
 
-    (total_correct_answers(quiz_results).to_f / TOTAL_QUESTIONS * 100)
   end
 
   # Checks if a user's answer matches the correct answer.
@@ -61,8 +60,9 @@ module QuizResultsHelper
   #
   def check_answer(correct_answer, user_answer)
     return false if correct_answer == 'N/A' || user_answer == 'N/A'
-
     correct_answer.strip.downcase
+    user_answer.strip.downcase
+    return true if user_answer == correct_answer
   end
 
   # Generates a table row displaying question, correct answer, user's answer, and result (Correct/Incorrect).
@@ -139,8 +139,13 @@ module QuizResultsHelper
   # - String indicating whether the user's answer was "Correct" or "Incorrect".
   #
   def evaluate_result(correct_answer, user_answer)
-    'Incorrect'
+    if user_answer == correct_answer
+      return 'Correct'
+    else 
+      return 'Incorrect'
+    end
   end
+  
 
   # Generates table data (`<td>`) for question, correct answer, user's answer, and result.
   #

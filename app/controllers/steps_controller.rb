@@ -66,9 +66,7 @@ class StepsController < ApplicationController
     @questions_per_page = QUESTIONS_PER_PAGE
     @score_percentage, @correct_answers, @total_questions = scoring_metrics(@quiz_results)
     @quiz_results.update(score: @score_percentage)
-
     clear_quiz_form_session_data # <- Clear the quiz form session data
-
     render :results
   end
 
